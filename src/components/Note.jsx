@@ -1,7 +1,10 @@
 import editImg from '../assets/images/edit.svg';
 import delImg from '../assets/images/del.svg';
+import { useContext } from 'react';
+import { Context } from '../context/Context';
 
 function Note({note}) {
+    const {delNote} = useContext(Context);
   return (
     <div className="notes__item">
         <div className="notes__item-top">
@@ -10,11 +13,11 @@ function Note({note}) {
         </div>
         <p className="notes__item-text">{note.text}</p>
         <div className="notes__buttons">
-            <button className="notes__item-btn edit">
+            <button className="notes__item-btn notes__edit">
                 <img src={editImg} alt="Edit" />
                 <span>РЕДАКТИРОВАТЬ</span>
             </button>
-            <button className="notes__item-btn del">
+            <button onClick={() => delNote(note.id)} className="notes__item-btn notes__del">
                 <img src={delImg} alt="Edit" />
                 <span>УДАЛИТЬ</span>
             </button>

@@ -6,7 +6,7 @@ import Note from './Note';
 
 function Notes() {
   const [grid, setGrid] = useState(false);
-  const {lang, notes} = useContext(Context);
+  const {lang, notes, search} = useContext(Context);
 
   return (
     <div className={`notes container ${grid ? 'active' : ''}`}>
@@ -20,7 +20,7 @@ function Notes() {
 
       <div className="notes__list">
         {
-          notes.map(note => (
+          notes.filter((note) => note.title.toLowerCase().includes(search.trim().toLowerCase())).map(note => (
             <Note note={note} key={note.id}/>
           ))
         }

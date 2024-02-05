@@ -53,6 +53,7 @@
         width: 90%;
         padding: 5px;
         font-size: 18px;
+        outline: none;
     }
 
     &__search {
@@ -103,6 +104,7 @@
 
     &__list {
         display: flex;
+        flex-wrap: wrap;
         column-gap: 24px;
         margin-top: 30px;
     }
@@ -118,6 +120,8 @@
         background: var(--M3-read-only-light-surface1, linear-gradient(0deg, rgba(103, 80, 164, 0.05) 0%, rgba(103, 80, 164, 0.05) 100%), #FFFBFE);
         box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
         padding: 16px;
+        width: 31%;
+        margin-top: 24px;
     }
 
     &__item-top {
@@ -151,6 +155,92 @@
 
     &__item-btn{
         padding: 10px 12px;
-        gap: 8px;
+        gap: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    &__edit{
+        color: $edit;
+    }
+
+    &__del{
+        color: $del;
+    }
+}
+
+.add-btn{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000bb;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    &.active{
+        display: flex;
+    }
+
+    &__window{
+        display: flex;
+        flex-direction: column;
+        background: $bg;
+        height: 288px;
+        width: 312px;
+        border-radius: 28px;
+        padding: 24px;
+
+        &-title{
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 32px;
+            color: #1C1B1F;
+        }
+    }
+
+    input{
+        background: #E7E0EC;
+        margin-top: 16px;
+        height: 56px;
+        padding: 0 16px;
+        border-bottom: 1px solid #000000ee;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    &__buttons{
+        display: flex;
+        margin-top: 24px;
+        margin-left: auto;
+        column-gap: 8px;
+        button{
+            padding: 10px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        &-cancel{
+            color: $del;
+        }
+        &-add{
+            color: $edit;
+        }
     }
 }

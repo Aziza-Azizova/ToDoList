@@ -1,3 +1,5 @@
+import Add from "./components/Add"
+import Modal from "./components/Modal"
 import Navbar from "./components/Navbar"
 import Notes from "./components/Notes"
 import ContextProvider from "./context/Context"
@@ -7,6 +9,8 @@ function App() {
     <ContextProvider className="wrapper">
       <Navbar />
       <Notes />
+      <Add />
+      <Modal />
     </ContextProvider>
   )
 }

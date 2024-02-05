@@ -8,7 +8,7 @@ import { Context } from '../context/Context'
 
 function Navbar() {
     const [nav, setNav] = useState(false);
-    const {lang, changeLang, flag} = useContext(Context);
+    const {lang, changeLang, flag, search, setSearch} = useContext(Context);
     return (
         <nav className="nav">
             <div className="nav__content">
@@ -31,8 +31,8 @@ function Navbar() {
                 <button className="nav__search-back" onClick={()=>setNav(false)}> 
                     <img src={backIcon} alt="" className="nav__search-img" />
                 </button>
-                <input type="text" placeholder="Поиск..." className="nav__search-inp" />
-                <button className="nav__search-close">
+                <input value={search} onChange={(e)=> setSearch(e.target.value)} type="text" placeholder="Поиск..." className="nav__search-inp" />
+                <button className="nav__search-close" onClick={() => setSearch(" ")}>
                     <img src={closeIcon} alt="" className="nav__search-img" />
                 </button>
             </div>
