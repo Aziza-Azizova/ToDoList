@@ -7,9 +7,12 @@ function Modal() {
     const { addNote, modal, setModal, lang } = useContext(Context);
 
     function sendNote(){
-        addNote(title, text);
-        setTitle('');
-        setText('');
+        if(title !== '' && text !== ''){
+            addNote(title, text);
+            setTitle('');
+            setText('');
+        }
+
     }
 
     return (
