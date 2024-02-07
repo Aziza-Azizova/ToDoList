@@ -12,7 +12,7 @@ function Modal() {
             setTitle('');
             setText('');
         }
-
+        setModal(!modal);
     }
 
     return (

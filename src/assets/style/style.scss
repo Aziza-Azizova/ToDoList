@@ -107,11 +107,14 @@
         flex-wrap: wrap;
         column-gap: 24px;
         margin-top: 30px;
+        &.active{
+            display: inline;
+        }
     }
 
     &__buttons{
         display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
     }
 
@@ -122,6 +125,10 @@
         padding: 16px;
         width: 31%;
         margin-top: 24px;
+
+        &.row{
+            width: 100%;
+        }
     }
 
     &__item-top {

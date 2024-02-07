@@ -9,6 +9,10 @@ function ContextProvider({ children }) {
     const [notes, setNotes] = useState(getNotesFromStorage());
     const [search, setSearch] = useState('');
     const [modal, setModal] = useState(false);
+    const [noteTitle, setNoteTitle] = useState('');
+    const [noteText, setNoteText] = useState('');
+    const [update, setUpdate] = useState(false);
+    const [id, setId] = useState(null);
 
     useEffect(() => {
         localStorage.notes = JSON.stringify(notes)
@@ -61,9 +65,25 @@ function ContextProvider({ children }) {
         setFlag(!flag);
     }
 
+    function getNoteId(id){
+        setUpdate(true);
+        return setId(id);
+    }
+
+    function updateValue(){
+        notes.map(note => {
+            if(id === note.id){
+                note.title = noteTitle;
+                note.text = noteText;
+            }
+        });
+
+        setUpdate(!update);
+    }
+
 
     return (
-        <Context.Provider value={{ lang, changeLang, flag, notes, search, setSearch, delNote, addNote, modal, setModal }}>
+        <Context.Provider value={{ lang, changeLang, flag, notes, search, setSearch, delNote, addNote, modal, setModal, getNoteId, setNoteTitle, noteTitle, setNoteText, noteText, update, setUpdate, updateValue}}>
             {children}
         </Context.Provider>
     )

@@ -2,6 +2,7 @@ import Add from "./components/Add"
 import Modal from "./components/Modal"
 import Navbar from "./components/Navbar"
 import Notes from "./components/Notes"
+import UpdateModal from "./components/UpdateModal"
 import ContextProvider from "./context/Context"
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Notes />
       <Add />
       <Modal />
+      <UpdateModal />
     </ContextProvider>
   )
 }

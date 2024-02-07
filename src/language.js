@@ -11,7 +11,7 @@ export const ru = {
   "deledit": "Удалить",
   "closebtn": "Отмена",
   "addbtn": "Добавить",
-  "editwindowbtn": "изменить"
+  "editwindowbtn": "Изменить"
 }
 export const uz = {
   "appbartitle": "Eslatmalar",
@@ -26,5 +26,5 @@ export const uz = {
   "deledit": "o'chirish",
   "closebtn": "Bekor qilish",
   "addbtn": "Qo’shish",
-  "editwindowbtn": "o'zgartirish"
+  "editwindowbtn": "O'zgartirish"
 }
