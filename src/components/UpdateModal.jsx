@@ -4,15 +4,6 @@ import { Context } from "../context/Context";
 function UpdateModal() {
     const { update, setUpdate, lang, noteTitle, noteText, setNoteTitle, setNoteText, updateValue } = useContext(Context);
 
-    // function sendNote(){
-    //     if(title !== '' && text !== ''){
-    //         addNote(title, text);
-    //         setTitle('');
-    //         setText('');
-    //     }
-
-    // }
-
     return (
         <div className={`modal ${update ? 'active' : ''}`}>
             <div className='modal__window'>
