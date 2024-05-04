@@ -70,6 +70,7 @@
         &.active {
             opacity: 1;
             transform: translateY(0);
+            // transition: 0.3s;
         }
     }
 }
@@ -187,15 +188,15 @@
 }
 
 .modal{
+    display: none;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: #000000bb;
-    display: none;
-    align-items: center;
-    justify-content: center;
 
     &.active{
         display: flex;

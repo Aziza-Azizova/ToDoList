@@ -13,7 +13,7 @@ function Modal() {
             setText('');
         }
         setModal(!modal);
-    }
+    }    
 
     return (
         <div className={`modal ${modal ? 'active' : ''}`}>

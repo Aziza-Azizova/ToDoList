@@ -17,10 +17,10 @@ function ContextProvider({ children }) {
     useEffect(() => {
         localStorage.notes = JSON.stringify(notes)
     }, [notes]);
-
+ 
     function getNotesFromStorage(){
         let notesInStorage = localStorage.getItem('notes');
-        if(JSON.parse(notesInStorage)?.length >= 0){
+        if(JSON.parse(notesInStorage)?.length > 0){
             return notesInStorage = JSON.parse(notesInStorage)
         } else {
             return [
