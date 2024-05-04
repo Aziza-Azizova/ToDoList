@@ -46,11 +46,11 @@ function ContextProvider({ children }) {
         }
     }
 
-    function delNote(id){
+    function delNote(id) {
         setNotes(notes.filter(e => e.id !== id))
     }
 
-    function addNote(title, text){
+    function addNote(title, text) {
         let newNote = {
             id: notes.length !== 0 ? notes[notes.length - 1].id + 1 : 1,
             title,
@@ -65,14 +65,20 @@ function ContextProvider({ children }) {
         setFlag(!flag);
     }
 
-    function getNoteId(id){
+    function getNoteId(id) {
         setUpdate(true);
+        notes.forEach(note => {
+            if (note.id == id) {
+                setNoteTitle(note.title);
+                setNoteText(note.text);
+            }
+        });
         return setId(id);
     }
 
-    function updateValue(){
+    function updateValue() {
         notes.map(note => {
-            if(id === note.id){
+            if (id === note.id) {
                 note.title = noteTitle;
                 note.text = noteText;
             }
@@ -83,7 +89,7 @@ function ContextProvider({ children }) {
 
 
     return (
-        <Context.Provider value={{ lang, changeLang, flag, notes, search, setSearch, delNote, addNote, modal, setModal, getNoteId, setNoteTitle, noteTitle, setNoteText, noteText, update, setUpdate, updateValue}}>
+        <Context.Provider value={{ lang, changeLang, flag, notes, search, setSearch, delNote, addNote, modal, setModal, getNoteId, setNoteTitle, noteTitle, setNoteText, noteText, update, setUpdate, updateValue }}>
             {children}
         </Context.Provider>
     )
